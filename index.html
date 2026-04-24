@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Andrew Racine</title>
+<meta name="description" content="Marketing operator. Growth builder. AI-native.">
+<meta property="og:title" content="Andrew Racine">
+<meta property="og:description" content="Marketing operator. Growth builder. AI-native.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #ffffff;
+    --muted: #6b6b6b;
+    --rule: #e6e6e6;
+    --maxw: 1160px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* Nav */
+  nav.site {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(150%) blur(8px);
+    z-index: 10;
+  }
+  nav.site .row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 15px;
+  }
+  .wordmark { font-weight: 500; letter-spacing: -0.01em; }
+  nav .links { display: flex; gap: 28px; }
+
+  /* Section rhythm */
+  section.block {
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.block .grid {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 820px) {
+    section.block { padding: 64px 0; }
+    section.block .grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding-top: 10px;
+  }
+
+  /* Typography */
+  h1.display {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+    margin: 0;
+    font-size: clamp(44px, 6vw, 88px);
+  }
+  h2.display {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 0;
+    font-size: clamp(36px, 4.6vw, 64px);
+  }
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--muted); }
+  .lead { font-size: 19px; margin-bottom: 32px; }
+
+  /* Hero — type + portrait */
+  section.hero {
+    padding: 96px 0 32px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 820px) {
+    section.hero { padding: 56px 0 24px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  section.hero .sub {
+    max-width: 580px;
+    margin-top: 36px;
+    font-size: 18px;
+    color: var(--muted);
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 36px;
+    font-size: 17px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .cta:hover { text-decoration: none; opacity: 0.6; }
+
+  /* Portrait */
+  .portrait {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    background: #ededed;
+    position: relative;
+    overflow: hidden;
+    filter: grayscale(100%) contrast(1.02);
+    transition: filter 350ms ease;
+  }
+  .portrait:hover { filter: grayscale(0%) contrast(1); }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 820px) {
+    .portrait { margin-left: 0; max-width: 320px; }
+  }
+
+  /* Track record list */
+  ol.roles { list-style: none; padding: 0; margin: 0; }
+  ol.roles li {
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 56px 1fr 1.2fr;
+    gap: 32px;
+    align-items: start;
+  }
+  ol.roles li:last-child { border-bottom: 1px solid var(--rule); }
+  .role-logo-wrap {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: flex-start;
+  }
+  .role-logo {
+    max-width: 44px;
+    max-height: 44px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.72);
+    transition: filter 250ms ease;
+  }
+  ol.roles li:hover .role-logo { filter: grayscale(0%) opacity(1); }
+  ol.roles h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  ol.roles .role-meta { font-size: 15px; color: var(--muted); margin: 4px 0 0; }
+  ol.roles .role-desc { margin: 0; font-size: 16px; }
+  @media (max-width: 820px) {
+    ol.roles li { grid-template-columns: 40px 1fr; gap: 16px; }
+    ol.roles .role-desc { grid-column: 1 / -1; margin-top: 8px; padding-left: 56px; }
+  }
+
+  /* Focus — numbered */
+  ol.numbered { list-style: none; padding: 0; margin: 0; }
+  ol.numbered li { padding: 28px 0; border-top: 1px solid var(--rule); }
+  ol.numbered li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.numbered h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin: 0 0 10px;
+  }
+  ol.numbered p { max-width: 640px; margin: 0; }
+
+  /* Featured on list */
+  ul.pods { list-style: none; padding: 0; margin: 0; }
+  ul.pods li {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 24px;
+    font-size: 18px;
+  }
+  ul.pods li:last-child { border-bottom: 1px solid var(--rule); }
+  ul.pods .pod-title a { border-bottom: 1px solid transparent; }
+  ul.pods .pod-title a:hover { border-bottom-color: var(--ink); text-decoration: none; }
+  .pod-meta { color: var(--muted); font-size: 14px; white-space: nowrap; padding-top: 4px; }
+
+  /* Inverted CTA band */
+  section.connect {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 128px 0;
+    border: none;
+  }
+  section.connect h2 { max-width: 900px; margin: 0 0 32px; }
+  section.connect p { max-width: 620px; color: #c9c9c9; font-size: 19px; margin: 0 0 40px; }
+  section.connect .cta {
+    color: var(--paper);
+    border-bottom-color: var(--paper);
+    font-size: 20px;
+  }
+  @media (max-width: 820px) {
+    section.connect { padding: 72px 0; }
+  }
+
+  /* Footer */
+  footer.site {
+    padding: 32px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  footer.site .row {
+    display: flex; justify-content: space-between; gap: 24px;
+  }
+  footer.site .links { display: flex; gap: 24px; }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="container row">
+    <a class="wordmark" href="/">Andrew Racine</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/andrewracine" target="_blank" rel="noopener">Connect &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1 class="display">Marketing operator.<br>Growth builder.<br>AI-native.</h1>
+      <p class="sub">Currently VP of Demand Generation &amp; Growth at WRITER. Previously Fivetran, Turbonomic, and MongoDB &mdash; where I led the programs and teams that turned pipeline into IPOs.</p>
+      <a class="cta" href="https://www.linkedin.com/in/andrewracine" target="_blank" rel="noopener">Connect with me &rarr;</a>
+    </div>
+    <div class="hero-portrait">
+      <div class="portrait" aria-label="Andrew Racine portrait">
+        <img src="aracine_2024.jpg" alt="Andrew Racine">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container grid">
+    <aside class="label">Track Record</aside>
+    <ol class="roles">
+      <li>
+        <div class="role-logo-wrap">
+          <img class="role-logo" src="logos/writer.svg" alt="WRITER logo">
+        </div>
+        <div>
+          <h3>WRITER</h3>
+          <p class="role-meta">VP, Demand Generation &amp; Growth &middot; July 2023 &mdash; Present</p>
+        </div>
+        <p class="role-desc">Scaling GTM for the generative AI platform for enterprise work.</p>
+      </li>
+      <li>
+        <div class="role-logo-wrap">
+          <img class="role-logo" src="logos/fivetran.png" alt="Fivetran logo">
+        </div>
+        <div>
+          <h3>Fivetran</h3>
+          <p class="role-meta">VP, Global Demand Generation &middot; Dec 2019 &mdash; July 2023</p>
+        </div>
+        <p class="role-desc">Scaled Demand Generation from $25M to $250M.</p>
+      </li>
+      <li>
+        <div class="role-logo-wrap">
+          <img class="role-logo" src="logos/turbonomic.png" alt="Turbonomic logo">
+        </div>
+        <div>
+          <h3>Turbonomic</h3>
+          <p class="role-meta">Sr. Director, Demand Generation &amp; Digital &middot; Jan 2018 &mdash; Dec 2019</p>
+        </div>
+        <p class="role-desc">Ran demand and digital through the IBM acquisition.</p>
+      </li>
+      <li>
+        <div class="role-logo-wrap">
+          <img class="role-logo" src="logos/mongodb.png" alt="MongoDB logo">
+        </div>
+        <div>
+          <h3>MongoDB</h3>
+          <p class="role-meta">Director, Demand Generation &middot; Jan 2016 &mdash; Jan 2018</p>
+        </div>
+        <p class="role-desc">Created the Demand Generation function during the growth that led to IPO.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container grid">
+    <aside class="label">Focus</aside>
+    <div>
+      <ol class="numbered">
+        <li>
+          <h3>01 &mdash; Scaling demand from Series A to IPO.</h3>
+          <p>The motion is different at every stage. The instinct to keep running the last stage's playbook is what kills growth. I rebuild fast.</p>
+        </li>
+        <li>
+          <h3>02 &mdash; Building marketing teams that are AI-native.</h3>
+          <p>For the past three years I've been re-wiring programs, workflows, and org design around AI. Not slides. Real pipeline, real velocity, real cost curves.</p>
+        </li>
+        <li>
+          <h3>03 &mdash; Developing the people who do the work.</h3>
+          <p>Teams compound. The best marketing orgs I've built have been the ones where the bench out-grew me.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container grid">
+    <aside class="label">Featured On</aside>
+    <div>
+      <ul class="pods">
+        <li>
+          <span class="pod-title"><a href="https://sharebird.com/profile/andrew-racine" target="_blank" rel="noopener">Top Demand Generation Mentor List 2026</a></span>
+          <span class="pod-meta">Sharebird &uarr;</span>
+        </li>
+        <li>
+          <span class="pod-title"><a href="https://open.spotify.com/episode/4sTtKnY8JlvHVVbnhynzmF?si=138fee0668ab4085" target="_blank" rel="noopener">Critical Moments &mdash; 99% blocked and Andrew Racine had no idea</a></span>
+          <span class="pod-meta">Spotify &uarr;</span>
+        </li>
+        <li>
+          <span class="pod-title"><a href="https://open.spotify.com/episode/4t1AHQSi6wD9VODe1m0GtK?si=2d6ebe83d25d41c9" target="_blank" rel="noopener">Executive Guidance &mdash; Keys to Innovation and Growth in B2B SaaS</a></span>
+          <span class="pod-meta">Spotify &uarr;</span>
+        </li>
+        <li>
+          <span class="pod-title"><a href="https://open.spotify.com/episode/3gewxxDNnPwrrmYvu4gSmg?si=a3d44c796da34d4e" target="_blank" rel="noopener">Pipeline Brew &mdash; Generative AI, Customer-Focus, and Human Connection</a></span>
+          <span class="pod-meta">Spotify &uarr;</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="connect">
+  <div class="container">
+    <h2 class="display">Looking for someone to build the engine?</h2>
+    <p>I'm always happy to talk with founders, CMOs, and operators working on hard growth problems &mdash; especially teams bringing AI into the stack.</p>
+    <a class="cta" href="https://www.linkedin.com/in/andrewracine" target="_blank" rel="noopener">Connect with me on LinkedIn &rarr;</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container row">
+    <span>&copy; 2026 Andrew Racine</span>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/andrewracine" target="_blank" rel="noopener">LinkedIn &uarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
