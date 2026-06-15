@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Most Marketing Attribution Is Wrong | Andrew Racine</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+      padding: 0 2rem;
+    }
+
+    header .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    header .site-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { color: #1a1a1a; }
+
+    .back-link {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .back-link a {
+      font-size: 0.9rem;
+      color: #888;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .back-link a:hover { color: #4f46e5; }
+
+    article {
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .post-header {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .post-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #4f46e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .author-info .name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .author-info .bio {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .post-body {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 2.5rem;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .post-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2rem 0 0.75rem;
+    }
+
+    .post-body p {
+      margin-bottom: 1.25rem;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+
+    .post-body li { margin-bottom: 0.4rem; }
+
+    .post-body blockquote {
+      border-left: 4px solid #4f46e5;
+      padding: 0.5rem 1.25rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    .post-body code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    .post-footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post-footer a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .post-footer a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="inner">
+      <a href="/" class="site-name">Andrew Racine</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Blog</a>
+  </div>
+
+  <article>
+
+    <div class="post-header">
+      <div class="post-meta">
+        <time datetime="2026-06-15">June 15, 2026</time>
+        <span>·</span>
+        <span class="tag">Growth</span>
+        <span>·</span>
+        <span>5 min read</span>
+      </div>
+
+      <h1>Most Marketing Attribution Is Wrong. Here's What I Do Instead.</h1>
+
+      <div class="author">
+        <div class="avatar">AR</div>
+        <div class="author-info">
+          <div class="name">Andrew Racine</div>
+          <div class="bio">Marketing leader focused on demand gen and growth.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>
+        Most attribution models are built to give you an answer. The problem is they're
+        often giving you a confident wrong answer. And confident wrong answers are more
+        dangerous than no answer at all, because they shape decisions.
+      </p>
+
+      <p>
+        I've seen this play out dozens of times. A team leans into last-touch attribution,
+        paid search gets all the credit, organic and brand get cut, and six months later
+        pipeline is down and nobody understands why. The model worked great. The business didn't.
+      </p>
+
+      <h2>Why Last-Touch Fails (Even When the Numbers Look Good)</h2>
+
+      <p>
+        Last-touch attribution is intuitive: whoever closed the deal gets credit. It's
+        clean, it's easy to report on, and it maps to how salespeople think. That's
+        exactly why it's seductive and exactly why it leads you astray.
+      </p>
+
+      <p>
+        Buyers don't move in straight lines. A prospect might read three blog posts over
+        two months, attend a webinar, talk to a friend who uses your product, and then
+        click a retargeting ad the week they're ready to buy. Last-touch gives 100% of
+        the credit to that final ad. The blog, the webinar, the word-of-mouth: invisible.
+      </p>
+
+      <blockquote>
+        The channels that look worst in attribution are often the ones doing the most
+        upstream work.
+      </blockquote>
+
+      <p>
+        Cut those channels, and you cut the thing feeding everything else. Conversions
+        don't disappear right away, so you don't notice immediately. By the time you do,
+        the damage is already done.
+      </p>
+
+      <h2>What I Use Instead</h2>
+
+      <p>
+        I don't think there's a perfect attribution model, so I've stopped looking for one.
+        What I do instead is run multiple lenses in parallel and use them to triangulate,
+        not to get a definitive answer.
+      </p>
+
+      <ul>
+        <li><strong>First-touch and last-touch together.</strong> Compare them. Where they diverge, there's a story worth understanding.</li>
+        <li><strong>Pipeline surveys.</strong> Ask prospects directly: "How did you first hear about us?" Self-reported data is imperfect, but it catches things tracking can't (dark social, word-of-mouth, podcasts).</li>
+        <li><strong>Holdout experiments.</strong> For any significant channel investment, run a geo or audience holdout. Measure the actual lift. It's the only way to get close to causality.</li>
+        <li><strong>Cohort analysis.</strong> Look at how cohorts that came through different channels perform over time. Cost per acquired customer is often more telling than cost per lead.</li>
+      </ul>
+
+      <h2>The Honest Version</h2>
+
+      <p>
+        Most of us are operating with imperfect data and making judgment calls. That's fine.
+        The mistake is pretending otherwise. Attribution models should inform your instincts,
+        not replace them.
+      </p>
+
+      <p>
+        If your paid search rep is telling you the numbers look great and your gut says
+        something's off, trust the discomfort. Run a holdout. Pull the cohort data. Look
+        for the thing the model can't see.
+      </p>
+
+      <p>
+        The goal isn't perfect attribution. It's good enough attribution, paired with
+        healthy skepticism about what the numbers are actually telling you.
+      </p>
+
+      <div class="post-footer">
+        <a href="index.html">← All posts</a>
+        <a href="#">Next post →</a>
+      </div>
+
+    </div>
+
+  </article>
+
+  <footer>
+    © 2026 Andrew Racine · All rights reserved
+  </footer>
+
+</body>
+</html>
