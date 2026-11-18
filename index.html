@@ -59,7 +59,8 @@
     display: flex; align-items: center; justify-content: space-between;
     font-size: 15px;
   }
-  .wordmark { font-weight: 500; letter-spacing: -0.01em; }
+  .wordmark { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; letter-spacing: -0.01em; }
+  .wordmark .mono { width: 30px; height: 30px; border-radius: 7px; background: #0a0a0a; color: #fff; display: grid; place-items: center; font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0; line-height: 1; flex-shrink: 0; }
   nav .links { display: flex; gap: 28px; }
 
   /* Section rhythm */
@@ -262,7 +263,7 @@
 
 <nav class="site">
   <div class="container row">
-    <a class="wordmark" href="/">Andrew Racine</a>
+    <a class="wordmark" href="/"><span class="mono" aria-hidden="true">AR</span>Andrew Racine</a>
     <div class="links">
       <a href="/blog/">Writing</a>
       <a href="https://www.linkedin.com/in/andrewracine" target="_blank" rel="noopener">Connect &rarr;</a>

@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,11 +37,16 @@
     }
 
     header .site-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 700;
       font-size: 1.1rem;
       text-decoration: none;
       color: #1a1a1a;
     }
+
+    header .site-name .mono { width: 30px; height: 30px; border-radius: 7px; background: #0a0a0a; color: #fff; display: grid; place-items: center; font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0; line-height: 1; flex-shrink: 0; }
 
     nav a {
       text-decoration: none;
@@ -154,7 +162,7 @@
 
   <header>
     <div class="inner">
-      <a href="/" class="site-name">Andrew Racine</a>
+      <a href="/" class="site-name"><span class="mono" aria-hidden="true">AR</span>Andrew Racine</a>
       <nav>
         <a href="/">Home</a>
         <a href="/blog/">Blog</a>
