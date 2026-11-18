@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your AI Stack Isn't a Moat | Andrew Racine</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+      padding: 0 2rem;
+    }
+
+    header .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    header .site-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { color: #1a1a1a; }
+
+    .back-link {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .back-link a {
+      font-size: 0.9rem;
+      color: #888;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .back-link a:hover { color: #4f46e5; }
+
+    article {
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .post-header {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .post-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #4f46e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .author-info .name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .author-info .bio {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .post-body {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 2.5rem;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .post-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2rem 0 0.75rem;
+    }
+
+    .post-body p {
+      margin-bottom: 1.25rem;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+
+    .post-body li { margin-bottom: 0.4rem; }
+
+    .post-body blockquote {
+      border-left: 4px solid #4f46e5;
+      padding: 0.5rem 1.25rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    .post-body code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    .post-footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post-footer a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .post-footer a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="inner">
+      <a href="/" class="site-name">Andrew Racine</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Blog</a>
+  </div>
+
+  <article>
+
+    <div class="post-header">
+      <div class="post-meta">
+        <time datetime="2026-11-18">November 18, 2026</time>
+        <span>·</span>
+        <span class="tag">AI</span>
+        <span>·</span>
+        <span>4 min read</span>
+      </div>
+
+      <h1>Your AI Stack Isn't a Moat. Here's What Is.</h1>
+
+      <div class="author">
+        <div class="avatar">AR</div>
+        <div class="author-info">
+          <div class="name">Andrew Racine</div>
+          <div class="bio">Marketing leader focused on demand gen and growth.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>
+        If everyone uses the same models on the same data, everyone reaches the same conclusions.
+        That's the trap a lot of demand gen teams are walking into right now.
+      </p>
+
+      <p>
+        I got a version of this question in my
+        <a href="https://sharebird.com/h/demand-generation/ama/writer-vp-demand-generation-growth-andrew-racine-on-ai-and-demand-generation">Sharebird AMA on AI and demand generation</a>:
+        if every team has access to the same AI tools, where's the moat five years out? It's a
+        question I keep coming back to, so I wanted to give it more room than an AMA answer allows.
+      </p>
+
+      <h2>Why AI Can't Be the Moat</h2>
+
+      <p>
+        Every week there's a new agent, a new workflow, a new way to produce ten versions of an ad
+        in the time it used to take to write one. That's real, and teams that ignore it will fall
+        behind. But not falling behind and getting ahead are different problems.
+      </p>
+
+      <p>
+        Hamilton Helmer has a useful test for any advantage. It needs a benefit, what you gain, and
+        a barrier, why rivals can't copy it. AI tools pass the first test easily. They fail the
+        second one completely. Anything you can buy, your competitor can buy next quarter.
+      </p>
+
+      <p>
+        Rory Sutherland makes the same point from a different angle. If everyone uses the same data
+        and the same logic, everyone reaches the same answer. AI makes the logic cheaper and faster.
+        It also makes it more uniform. When every team's first draft comes from the same handful of
+        models, the first drafts start to look alike.
+      </p>
+
+      <p>
+        Simply spend 15 minutes on LinkedIn these days and you will be amazed how many posts and
+        comments all follow a similar pattern and tone. It is so interesting that people and
+        companies would risk ruining their own brand in the name of shipping content more easily.
+      </p>
+
+      <p>
+        So AI is a short-term advantage. Product and strategy you can buy. Culture and brand you
+        have to earn.
+      </p>
+
+      <h2>Where the Moat Actually Is</h2>
+
+      <p>
+        Here's where I'd bet. Each of these is hard to copy, and each one takes time.
+      </p>
+
+      <ul>
+        <li><strong>Brand and mental availability.</strong> Only about 5% of accounts are in market at any moment. When one of the other 95% starts looking, more and more of them will ask an AI assistant for a shortlist. The brands that show up are the ones the market already knows and talks about. That compounds over years, and there's no shortcut.</li>
+        <li><strong>Proprietary data and insight.</strong> Your first-party data, your customer conversations and your own research. Original benchmarks and tools rivals can't replicate are true assets. Everyone else is working from the same public internet.</li>
+        <li><strong>Trust and relationships.</strong> Community, events, customer advocates and executive relationships. These are costly signals, and costly signals create trust because they're costly. They get more valuable as everything else gets cheaper to produce.</li>
+        <li><strong>A distinct point of view.</strong> When information is commoditized, personality and perspective are what make people pay attention. Different beats better.</li>
+        <li><strong>Your team's judgment and speed of learning.</strong> Two companies with identical tools will get very different results depending on who's using them and how fast they learn.</li>
+        <li><strong>Distribution you own.</strong> An audience, a newsletter, a community. Rented attention gets more expensive and more crowded every year.</li>
+      </ul>
+
+      <blockquote>
+        The tools change every six months. The psychology of buyers hasn't changed in a hundred years.
+      </blockquote>
+
+      <h2>What I'd Do About It Now</h2>
+
+      <p>
+        Knowing where the moat is doesn't help much unless it changes what you do on Monday.
+        A few things I'd act on.
+      </p>
+
+      <p>
+        Split the job in two. Brand keeps you remembered by the 95%. Demand capture finds and times
+        the 5%. AI is a huge help on the second job. It's a weak substitute for the first.
+      </p>
+
+      <p>
+        Protect the unmeasurable. Brand, events and high-effort ABM will always look bad in
+        last-touch attribution. Cutting them is how you lose next year's pipeline.
+      </p>
+
+      <p>
+        Automate the plumbing, keep humans on the signals. Let AI research an account deeply, then
+        have a person write the message that matters. A handwritten note or a custom teardown works
+        because someone clearly spent time on it. Strip out the effort and you strip out the meaning.
+      </p>
+
+      <p>
+        Build one asset nobody else has. A benchmark, an assessment, a piece of research built on
+        your own data. It will outlast a lot of AI-generated content that reads like everyone else's.
+      </p>
+
+      <p>
+        Start owning a channel. Pick the audience you want and start building the newsletter or the
+        community now. It's slow, and that's the point. Slow is what makes it hard to copy.
+      </p>
+
+      <h2>The Irony</h2>
+
+      <p>
+        AI pushes demand gen back toward fundamentals. Psychology, brand, story and relationships
+        were always the moat. AI just removes everything else that used to differentiate.
+      </p>
+
+      <p>
+        Use the tools. Get fluent, fast. But don't confuse the tools with the advantage. The teams
+        that win five years from now won't be the ones with the best stack. They'll be the ones
+        buyers already know, trust and remember.
+      </p>
+
+      <div class="post-footer">
+        <a href="index.html">← All posts</a>
+      </div>
+
+    </div>
+
+  </article>
+
+  <footer>
+    © 2026 Andrew Racine · All rights reserved
+  </footer>
+
+</body>
+</html>
